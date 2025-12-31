@@ -44,13 +44,22 @@ Only respond with valid JSON, no other text."""
 async def lifespan(app: FastAPI):
     """Load model on startup, cleanup on shutdown."""
     global model, processor
+    from transformers import BitsAndBytesConfig
 
-    print(f"Loading {MODEL_NAME} on {DEVICE}...")
+    print(f"Loading {MODEL_NAME} on {DEVICE} (4-bit quantized)...")
+
+    # 4-bit quantization config - reduces ~15GB model to ~5GB VRAM
+    quantization_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_compute_dtype=torch.float16,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_use_double_quant=True,
+    )
 
     processor = AutoProcessor.from_pretrained(MODEL_NAME)
     model = Qwen2AudioForConditionalGeneration.from_pretrained(
         MODEL_NAME,
-        torch_dtype=torch.float16 if DEVICE == "cuda" else torch.float32,
+        quantization_config=quantization_config,
         device_map="auto",
         low_cpu_mem_usage=True,
     )
