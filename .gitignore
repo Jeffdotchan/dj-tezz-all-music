@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# Audio files (too large for GitHub)
+*.mp3
+*.wav
+*.flac
+*.aiff
+*.aif
+*.m4a
+*.ogg
+*.wma
+*.aac
+
+# Video files
+*.mp4
+*.mov
+*.avi
+
+# DJ software files
+*.serato
+*.rekordbox
