@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<DJ_PLAYLISTS Version="1.0.0">
+  <PRODUCT Name="rekordbox" Version="6.0.0" Company="Pioneer DJ" />
+  <COLLECTION Entries="2">
+    <TRACK TrackID="1" Name="v2" Artist="Inspired by shinitai + then mia" Album="" Kind="WAV File" Size="46881832" TotalTime="244" AverageBpm="129.80" Tonality="8" Location="file://localhost/Users/jeff/Desktop/DJ%20Tezz%20All%20Music/suno/Inspired%20by%20shinitai%20%2B%20then%20mia%20-%20v2.wav" DateAdded="2025-12-30">
+      <TEMPO Inizio="0.000" Bpm="129.80" Metro="4/4" Battito="1" />
+    </TRACK>
+    <TRACK TrackID="2" Name="Inspired by shinitai + then mia" Artist="" Album="" Kind="WAV File" Size="55878615" TotalTime="291" AverageBpm="129.70" Tonality="8" Location="file://localhost/Users/jeff/Desktop/DJ%20Tezz%20All%20Music/suno/Inspired%20by%20shinitai%20%2B%20then%20mia.wav" DateAdded="2025-12-30">
+      <TEMPO Inizio="0.000" Bpm="129.70" Metro="4/4" Battito="1" />
+    </TRACK>
+  </COLLECTION>
+  <PLAYLISTS>
+    <NODE Type="0" Name="ROOT" Count="1">
+      <NODE Type="1" Name="Suno Tracks" KeyType="0" Entries="2">
+        <TRACK Key="1" />
+        <TRACK Key="2" />
+      </NODE>
+    </NODE>
+  </PLAYLISTS>
+</DJ_PLAYLISTS>
