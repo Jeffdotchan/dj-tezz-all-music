@@ -1,0 +1,45 @@
+[project]
+name = "djtezz"
+version = "0.1.0"
+description = "EDM music analysis and DJ workflow tools"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.0",
+    "rich>=13.0",
+    "mutagen>=1.47",
+]
+
+[project.optional-dependencies]
+tier1 = [
+    "essentia-tensorflow>=2.1b6",
+]
+tier2 = [
+    "faster-whisper>=1.0",
+]
+tier3 = [
+    "transformers>=4.40",
+    "torch>=2.0",
+    "accelerate>=0.27",
+]
+export = [
+    "pyrekordbox>=0.3",
+]
+all = [
+    "djtezz[tier1,tier2,tier3,export]",
+]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.4",
+]
+
+[project.scripts]
+djtezz = "djtezz.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

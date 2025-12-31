@@ -20,3 +20,23 @@
 # DJ software files
 *.serato
 *.rekordbox
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Project
+catalog.json
