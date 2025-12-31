@@ -8,7 +8,7 @@ from rich.table import Table
 
 from . import __version__
 from .catalog import Catalog
-from .config import DEFAULT_MUSIC_PATH, QWEN_API_BASE, QWEN_MODEL_NAME
+from .config import DEFAULT_MUSIC_PATH, QWEN_API_BASE
 from .utils.audio import scan_directory, get_audio_metadata
 from .utils.hash import hash_file_quick
 
@@ -159,13 +159,10 @@ def _run_tier2(file_path: Path, gpu_id: int) -> dict:
 
 
 def _run_tier3(file_path: Path, gpu_id: int) -> dict:
-    """Run Tier 3 (Qwen2-Audio) analysis via local API."""
+    """Run Tier 3 (Qwen2-Audio) analysis via custom FastAPI server."""
     from .analyzers.tier3_qwen import QwenAudioAnalyzer
 
-    with QwenAudioAnalyzer(
-        api_base=QWEN_API_BASE,
-        model_name=QWEN_MODEL_NAME,
-    ) as analyzer:
+    with QwenAudioAnalyzer(api_base=QWEN_API_BASE) as analyzer:
         return analyzer.analyze(file_path)
 
 

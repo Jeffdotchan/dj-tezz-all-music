@@ -9,9 +9,8 @@ AUDIO_EXTENSIONS = {".mp3", ".wav", ".flac", ".aiff", ".aif", ".m4a", ".ogg", ".
 DEFAULT_MUSIC_PATH = Path(__file__).parent.parent
 CATALOG_PATH = DEFAULT_MUSIC_PATH / "catalog.json"
 
-# Tier 3 API server (Qwen2-Audio)
-QWEN_API_BASE = "http://192.168.1.167:1234"
-QWEN_MODEL_NAME = "qwen2-audio-7b-instruct"
+# Tier 3 API server (Qwen2-Audio custom FastAPI server)
+QWEN_API_BASE = "http://192.168.1.167:8765"
 
 # Camelot wheel mapping for harmonic mixing
 KEY_TO_CAMELOT = {
